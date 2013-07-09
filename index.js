@@ -47,7 +47,7 @@ BufferPut.prototype.length = function() {
 };
 
 BufferPut.prototype.buffer = function () {
-  var buf = new Buffer(len);
+  var buf = new Buffer(this.len);
   var offset = 0;
   this.words.forEach(function(word) {
     if(word.buffer) {

@@ -1,6 +1,6 @@
 {
   "name" : "bufferput",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "description" : "Pack multibyte binary values into buffers",
   "main" : "./index.js",
   "keywords": [
