@@ -22,14 +22,29 @@ BufferPut.prototype.floatle = function(x) {
   return this;
 };
 
+BufferPut.prototype.varint = function(i) {
+  if(i < 0xFD) {
+    this.word8(i);
+  } else if(i <= 1<<16) {
+    this.word8(0xFD);
+    this.word16le(i);
+  } else if(i <= 1<<32) {
+    this.word8(0xFE);
+    this.word32le(i);
+  } else {
+    this.word8(0xFF);
+    this.word64le(i);
+  }
+};
+
 [8, 16, 24, 32, 64].forEach(function(bits) {
-  Buffer.prototype['word'+bits+'be'] = function(x) {
+  BufferPut.prototype['word'+bits+'be'] = function(x) {
     this.words.push({endian: 'big', bytes: bits / 8, value: x});
     this.len += bits / 8;
     return this;
   };
 
-  Buffer.prototype['word'+bits+'le'] = function(x) {
+  BufferPut.prototype['word'+bits+'le'] = function(x) {
     this.words.push({endian: 'little', bytes: bits / 8, value: x});
     this.len += bits / 8;
     return this;
