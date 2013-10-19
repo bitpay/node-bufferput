@@ -29,7 +29,7 @@ Build a buffer
     #!/usr/bin/env node
 
     var BufferPut = require('bufferput');
-    var buf = BufferPut()
+    var buf = (new BufferPut())
         .word16be(1337)
         .word8(1)
         .pad(5)
@@ -50,7 +50,7 @@ Send a buffer to a writeable stream
     #!/usr/bin/env node
 
     var BufferPut = require('bufferput');
-    Put()
+    (new BufferPut())
         .word16be(24930)
         .word32le(1717920867)
         .word8(103)
