@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var Put = require('put');
-var buf = Put()
+var Put = require('../index.js');
+var buf = (new Put())
     .word16be(1337)
     .word8(1)
     .pad(5)
