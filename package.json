@@ -1,6 +1,6 @@
 {
   "name" : "bufferput",
-  "version" : "0.1.1",
+  "version" : "0.1.2",
   "description" : "Pack multibyte binary values into buffers",
   "main" : "./index.js",
   "keywords": [
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/gasteve/node-bufferput.git"
+    "url": "http://github.com/bitpay/node-bufferput.git"
   }, 
   "scripts" : {
     "test" : "expresso"
