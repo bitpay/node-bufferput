@@ -10,6 +10,11 @@ BufferPut.prototype.put = function(buf) {
   return this;
 };
 
+BufferPut.prototype.insert = function(bufferput) {
+  this.words = this.words.concat(bufferput.words);
+  this.len += bufferput.len;
+}
+
 BufferPut.prototype.word8 = function(x) {
   this.words.push({bytes: 1, value: x});
   this.len += 1;
